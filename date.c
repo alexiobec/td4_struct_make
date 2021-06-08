@@ -3,7 +3,7 @@
 #include "date.h"
 
 void print_date( date * d ) {
-    printf( "date : %d/%d/%d\n" , d->jour , d->mois , d->an );
+    printf( "%d/%d/%d\n" , d->jour , d->mois , d->an );
 
 }
 
@@ -14,6 +14,51 @@ date * create_date( int jour , int mois , int an ) {
     d->an = an;
 }
 
+person * create_person( char * nom , char * prenom , date * naissance ) {
+    person * p = malloc( sizeof( date ) );
+    p->nom = nom;
+    p->prenom = prenom;
+    p->naissance = naissance;
+}
 
+void print_person( person * p ) {
+    print_string( p->prenom );
+    printf( " " );
+    print_string( p->nom );
+    printf( " est né le : " );
+    print_date( p->naissance );
+}
 
+void print_string( char * s ) {
+    while ( *s ) {
+        printf( "%c" , *s );
+        s++;
+    }
+}
 
+int compare_date( date * date1 , date * date2 ) {
+    if ( date1->jour == date2->jour ) {
+        if ( date1->mois == date2->mois ) {
+            if ( date1->an == date2->an ) {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+date * dupliquer_date( date * d ) {
+    date * e = malloc( sizeof( date ) );
+    e->jour = d->jour;
+    e->mois = d->mois;
+    e->an = d->an;
+    return e;
+}
+
+person * dupliquer_person( person * p ) {
+    person * q = malloc( sizeof( date ) );
+    q->nom = p->nom;
+    q->prenom = p->prenom;
+    q->naissance = p->naissance;
+    return q;
+}
