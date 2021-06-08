@@ -7,6 +7,13 @@ void print_date( date * d ) {
 
 }
 
+date * create_date( int jour , int mois , int an ) {
+    date * d = malloc( sizeof( date ) );
+    d->jour = jour;
+    d->mois = mois;
+    d->an = an;
+}
+
 
 
 

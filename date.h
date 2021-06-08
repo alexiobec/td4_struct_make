@@ -8,5 +8,6 @@ typedef struct _Date {
 } date;
 
 void print_date( date * d );
+date * create_date( int jour , int mois , int an );
 
 #endif
