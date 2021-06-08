@@ -3,7 +3,7 @@
 #include "date.h"
 
 void main( ) {
-    create_date( 8 , 6 , 2021 );
+    date * d = create_date( 8 , 6 , 2021 );
     print_date( d );
 
 }
