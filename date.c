@@ -3,7 +3,7 @@
 #include "date.h"
 
 void print_date( date * d ) {
-    printf( "%d/%d/%d\n" , d->jour , d->mois , d->an );
+    printf( "%d/%d/%d" , d->jour , d->mois , d->an );
 
 }
 
@@ -48,13 +48,9 @@ int compare_date( date * date1 , date * date2 ) {
 }
 
 date * dupliquer_date( date * d ) {
-    return create_date (d->jour,d->mois,d->an); 
+    return create_date( d->jour , d->mois , d->an );
 }
 
 person * dupliquer_person( person * p ) {
-    person * q = malloc( sizeof( date ) );
-    q->nom = p->nom;
-    q->prenom = p->prenom;
-    q->naissance = p->naissance;
-    return q;
+    return create_person( p->nom , p->prenom , p->naissance );
 }
