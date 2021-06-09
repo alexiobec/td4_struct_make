@@ -48,11 +48,7 @@ int compare_date( date * date1 , date * date2 ) {
 }
 
 date * dupliquer_date( date * d ) {
-    date * e = malloc( sizeof( date ) );
-    e->jour = d->jour;
-    e->mois = d->mois;
-    e->an = d->an;
-    return e;
+    return create_date (d->jour,d->mois,d->an); 
 }
 
 person * dupliquer_person( person * p ) {
